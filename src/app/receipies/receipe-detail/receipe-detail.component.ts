@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Receipe } from '../receipe.model';
 import { recipeService } from '../recipe.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-receipe-detail',
@@ -13,8 +13,10 @@ export class ReceipeDetailComponent implements OnInit {
   public recipe: Receipe;
   public id: number = 0;
 
-  constructor(private recipeService: recipeService,
-    private route: ActivatedRoute){
+  constructor(
+    private recipeService: recipeService,
+    private route: ActivatedRoute,
+    private router: Router){
       console.log('recipe-detail: constructor');
   }
 
@@ -33,7 +35,8 @@ export class ReceipeDetailComponent implements OnInit {
   }
 
   onEditRecipe() {
-  throw new Error('Method not implemented.');
+    //this.router.navigate(['edit'], {relativeTo: this.route});
+    this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 
   onAddToShoppingList() {

@@ -16,6 +16,7 @@ import { ShoppingService } from './shopping-list/shopping.service';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeStartComponent } from './receipies/recipe-start/recipe-start.component';
+import { EditRecipeComponent } from './receipies/edit-recipe/edit-recipe.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RecipeStartComponent } from './receipies/recipe-start/recipe-start.comp
     ShoppingEditComponent,
     HighLightDirectiveDirective,
     dropDownDirective,
-    RecipeStartComponent
+    RecipeStartComponent,
+    EditRecipeComponent
   ],
   imports: [
     BrowserModule,
